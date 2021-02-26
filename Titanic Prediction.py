@@ -155,9 +155,9 @@ except Exception:
     
 def prediction(X):
     output = []
-    joblib_file_hard =  r"/app/Titanic-Survival-Prediction/Voting_hard_classifier_model.pkl"
-    joblib_file_soft =  r"/app/Titanic-Survival-Prediction/Voting_soft_classifier_model.pkl"
-    joblib_file_rf = r"/app/Titanic-Survival-Prediction/random_forest_classifier_model.pkl"
+    joblib_file_hard =  r"Voting_hard_classifier_model.pkl"
+    joblib_file_soft =  r"Voting_soft_classifier_model.pkl"
+    joblib_file_rf = r"random_forest_classifier_model.pkl"
 
     vc_hard = joblib.load(joblib_file_hard)
     vc_soft = joblib.load(joblib_file_soft)
