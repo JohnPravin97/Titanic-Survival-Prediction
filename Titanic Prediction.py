@@ -18,13 +18,136 @@ from sklearn.preprocessing import FunctionTransformer
 from sklearn.compose import make_column_transformer
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import VotingClassifier, RandomForestClassifier, BaggingClassifier
-from EDA_utils import make_column_transformerz, columnseparater, standardscaler, categorical_data, DFFeatureUnion
 import joblib
 import streamlit as st
 import pickle
-import SessionState
 from PIL import Image
 
+
+class make_column_transformerz(TransformerMixin):
+    def __init__(self, estimator, col_list):
+        self.estimator=estimator
+        self.col_list=col_list
+        self.make_= None
+    def fit(self, X, y=0):
+        self.make_= make_column_transformer((self.estimator, self.col_list), remainder='drop')
+        self.make_.fit(X)
+        return self
+    def transform(self,X):
+        dummy=self.make_.transform(X)
+        #cols=list(X.columns).remove(str(self.col_list))
+        transformed=pd.DataFrame(dummy, columns=self.col_list)
+        X.drop(self.col_list, axis=1, inplace=True)
+        X=pd.concat([X,transformed], axis=1, join='inner')
+        return X
+
+class columnseparater(TransformerMixin):
+    def __init__(self, cols):
+        self.cols=cols
+    def fit(self, X, y=None):
+        return self
+    def transform(self, X):
+        X_new = X[self.cols]
+        return X_new
+
+class standardscaler(TransformerMixin):
+    def __init__(self):
+        self.ss=None
+        self.mean_=None
+        self.scale_=None
+    def fit(self, X, y=None):
+        self.ss=StandardScaler()
+        self.ss.fit(X)
+        self.mean_ = pd.Series(self.ss.mean_, index=X.columns)
+        self.scale_ = pd.Series(self.ss.scale_, index=X.columns)
+        return self
+    def transform(self, X):
+        x=self.ss.transform(X)
+        numeric=pd.DataFrame(x, columns=X.columns)
+        return numeric
+
+class categorical_data(TransformerMixin):
+    def __init__(self):
+        self.value=None
+        self.categories_=None
+        self.columns=[]
+    def fit(self, X, y=None):
+        self.value=OneHotEncoder()
+        self.value.fit(X)
+        self.categories_=pd.Series(self.value.categories_)
+        return self
+    def transform(self, X):
+        x=self.value.transform(X)
+        for i in range(len(self.categories_)):
+            self.columns+=list(self.categories_[i]) #columns remove pannuna work aaghudhu
+        cate=pd.DataFrame(x.toarray())
+        return cate
+
+class DFFeatureUnion(TransformerMixin):
+    # FeatureUnion but for pandas DataFrames
+    def __init__(self, transformer_list):
+        self.transformer_list = transformer_list
+
+    def fit(self, X, y=None):
+        for t in self.transformer_list:
+            t.fit(X)
+        return self
+
+    def transform(self, X):
+        # assumes X is a DataFrame
+        Xts = [t.transform(X) for t in self.transformer_list]
+        Xunion = reduce(lambda X1, X2: pd.merge(X1, X2, left_index=True, right_index=True), Xts)
+        return Xunion
+
+
+class SessionState(object):
+    def __init__(self, **kwargs):
+        for key, val in kwargs.items():
+            setattr(self, key, val)
+
+
+    def get(**kwargs):
+    
+        # Hack to get the session object from Streamlit.
+    
+        ctx = ReportThread.get_report_ctx()
+    
+        this_session = None
+    
+        current_server = Server.get_current()
+        if hasattr(current_server, '_session_infos'):
+            # Streamlit < 0.56
+            session_infos = Server.get_current()._session_infos.values()
+        else:
+            session_infos = Server.get_current()._session_info_by_id.values()
+    
+        for session_info in session_infos:
+            s = session_info.session
+            if (
+                # Streamlit < 0.54.0
+                (hasattr(s, '_main_dg') and s._main_dg == ctx.main_dg)
+                or
+                # Streamlit >= 0.54.0
+                (not hasattr(s, '_main_dg') and s.enqueue == ctx.enqueue)
+                or
+                # Streamlit >= 0.65.2
+                (not hasattr(s, '_main_dg') and s._uploaded_file_mgr == ctx.uploaded_file_mgr)
+            ):
+                this_session = s
+    
+        if this_session is None:
+            raise RuntimeError(
+                "Oh noes. Couldn't get your Streamlit Session object. "
+                'Are you doing something fancy with threads?')
+    
+        # Got the session object! Now let's attach some state into it.
+    
+        if not hasattr(this_session, '_custom_session_state'):
+            this_session._custom_session_state = SessionState(**kwargs)
+    
+        return this_session._custom_session_state
+    
+    
 try:
     import streamlit.ReportThread as ReportThread
     from streamlit.server.Server import Server
@@ -35,9 +158,9 @@ except Exception:
     
 def prediction(X):
     output = []
-    joblib_file_hard =  r"C:\Users\jpravijo\Desktop\Anaconda\Streamlit\Titanic Prediction\Voting_hard_classifier_model.pkl"
-    joblib_file_soft =  r"C:\Users\jpravijo\Desktop\Anaconda\Streamlit\Titanic Prediction\Voting_soft_classifier_model.pkl"
-    joblib_file_rf = r"C:\Users\jpravijo\Desktop\Anaconda\Streamlit\Titanic Prediction\random_forest_classifier_model.pkl"
+    joblib_file_hard =  r"/app/Titanic-Survival-Prediction/Voting_hard_classifier_model.pkl"
+    joblib_file_soft =  r"/app/Titanic-Survival-Prediction/Voting_soft_classifier_model.pkl"
+    joblib_file_rf = r"/app/Titanic-Survival-Prediction/random_forest_classifier_model.pkl"
 
     vc_hard = joblib.load(joblib_file_hard)
     vc_soft = joblib.load(joblib_file_soft)
