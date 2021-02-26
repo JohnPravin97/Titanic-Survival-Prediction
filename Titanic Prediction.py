@@ -79,6 +79,16 @@ class categorical_data(TransformerMixin):
             self.columns+=list(self.categories_[i]) #columns remove pannuna work aaghudhu
         cate=pd.DataFrame(x.toarray())
         return cate
+    
+def reduce(function, iterable, initializer=None):
+    it = iter(iterable)
+    if initializer is None:
+        value = next(it)
+    else:
+        value = initializer
+    for element in it:
+        value = function(value, element)
+    return value
 
 class DFFeatureUnion(TransformerMixin):
     # FeatureUnion but for pandas DataFrames
