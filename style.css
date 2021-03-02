@@ -1,0 +1,39 @@
+.css-xq1lnh-EmotionIconBase {
+    vertical-align: middle;
+    overflow: hidden;
+    color: white;
+    fill: currentcolor;
+    display: inline-flex;
+    font-size: 0.9rem;
+    width: 0.9rem;
+    height: 0.9rem;
+}
+
+label{
+color: white !important;
+}
+
+.stTextInput>div>div>input {
+    color: #000000;
+}
+
+.stButton>button {
+    color: #0000ff;
+}
+.Widget>label {
+    color: white;
+    font-family: monospace;
+}
+[class^="st-b"]  {
+    color: black;
+}
+.st-bb {
+    background-color: white;
+}
+.st-e8 {
+color: white;
+}
+
+header .decoration {
+    background-color: white;
+}
