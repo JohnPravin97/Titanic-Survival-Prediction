@@ -38,9 +38,9 @@ def local_css(file_name):
     
 def prediction(X):
     output = []
-    joblib_file_hard =  r"C:\Users\jpravijo\Desktop\Anaconda\Streamlit\Titanic Prediction\Voting_hard_classifier_model.pkl"
-    joblib_file_soft =  r"C:\Users\jpravijo\Desktop\Anaconda\Streamlit\Titanic Prediction\Voting_soft_classifier_model.pkl"
-    joblib_file_rf = r"C:\Users\jpravijo\Desktop\Anaconda\Streamlit\Titanic Prediction\random_forest_classifier_model.pkl"
+    joblib_file_hard = "Voting_hard_classifier_model.pkl"
+    joblib_file_soft = "Voting_soft_classifier_model.pkl"
+    joblib_file_rf = "random_forest_classifier_model.pkl"
 
     vc_hard = joblib.load(joblib_file_hard)
     vc_soft = joblib.load(joblib_file_soft)
@@ -204,8 +204,8 @@ Below are the creator details: </u></b></h3>''', unsafe_allow_html=True)
     st.sidebar.markdown('''<h3 style="color:#ce222f"> <u> Special thanks to </u> </h3>''', unsafe_allow_html=True)
     st.sidebar.markdown('''
 #### Name : Aakash Nagarajan (<https://www.linkedin.com/in/aakash-nagarajan-28325510a/>)''')
-    feedback_save = pd.HDFStore(r'C:\Users\jpravijo\Desktop\Anaconda\Streamlit\Titanic Prediction\feedback.h5')
-    comment_save = pd.HDFStore(r'C:\Users\jpravijo\Desktop\Anaconda\Streamlit\Titanic Prediction\comment.h5')      
+    feedback_save = pd.HDFStore('feedback.h5')
+    comment_save = pd.HDFStore('comment.h5')      
     
     st.sidebar.markdown('''<h3 style="color:#ce222f"> <u>Feedback: </u></h3>''', unsafe_allow_html=True)
     Name = st.sidebar.text_input('Please Enter Your Name*')
@@ -349,7 +349,7 @@ Below are the creator details: </u></b></h3>''', unsafe_allow_html=True)
                     st.write('Provide first name to proceed')
                 else:
                     if (cols[0].button('Predict')): 
-                        dataframe_save = pd.HDFStore(r'C:\Users\jpravijo\Desktop\Anaconda\Streamlit\Titanic Prediction\titanic_search_dataframe.h5')
+                        dataframe_save = pd.HDFStore('titanic_search_dataframe.h5')
                         try: 
                             dic = {'Pclass': Pclass, 'Name': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
                             X = pd.DataFrame(dic, index=[0])
@@ -452,7 +452,7 @@ Below are the creator details: </u></b></h3>''', unsafe_allow_html=True)
                     st.write('Provide first name to proceed')
                 else:
                     if (cols[0].button('Predict')): 
-                        dataframe_save = pd.HDFStore(r'C:\Users\jpravijo\Desktop\Anaconda\Streamlit\Titanic Prediction\titanic_search_dataframe.h5')
+                        dataframe_save = pd.HDFStore('titanic_search_dataframe.h5')
                         try:
                             dic = {'Pclass': Pclass, 'Name': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
                             X = pd.DataFrame(dic, index=[0])
@@ -579,7 +579,7 @@ Below are the creator details: </u></b></h3>''', unsafe_allow_html=True)
                     st.write('Provide first name to proceed')
                 else:
                     if (cols[0].button('Predict')): 
-                        dataframe_save = pd.HDFStore(r'C:\Users\jpravijo\Desktop\Anaconda\Streamlit\Titanic Prediction\titanic_search_dataframe.h5')
+                        dataframe_save = pd.HDFStore('titanic_search_dataframe.h5')
                         try: 
                             dic = {'Pclass': Pclass, 'Name': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
                             X = pd.DataFrame(dic, index=[0])
