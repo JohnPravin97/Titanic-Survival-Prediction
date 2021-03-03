@@ -192,7 +192,7 @@ if agree:
             animation = cols[4].selectbox('Animations', ['Pclass'])
             
         if cols[3].button('Visualize Me'):
-            st.markdown('***Please click "Autoscale" in plotly to visualize it efficiently***')
+            st.markdown('***Please wait while it is loading and click "Autoscale" in plotly to visualize it efficiently***')
             st.plotly_chart(px.scatter(df, x=x_axis, y=y_axis, title='Titanic Visualization',size=size, color = colors, facet_col = columns, hover_name=hover_name, hover_data=hover_data, animation_frame=animation, height=600, width=1000))
                               
       
