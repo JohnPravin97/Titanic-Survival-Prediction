@@ -383,7 +383,7 @@ if agree:
                                             if st.button('Refresh'):
                                                 state=False
                                         elif unique[counts.argmax()] ==0:
-                                            st.write('<h4 style="color:#ce222f"> <b> RESULT: Nee travel Pannirundha Pooiturupa </b> <h4>', unsafe_allow_html=True)
+                                            st.write('<h4 style="color:#ce222f"> <b> RESULT: Sorry to Say, you would have not survived based on the input data </b> <h4>', unsafe_allow_html=True)
                                             st.write('Please refer the below dataframe for each model outputs: **0 -> Not Survived, 1 -> Survived** ', unsafe_allow_html=True)
                                             st.dataframe(pd.DataFrame(output, index=['Voting_Classifier_Hard', 'Voting_Classifier_Soft', 'RandomForest'], columns=['Output']))
                                             st.write('**Thanks for using the app**. Please press **"Refresh" button** to continue with new prediction. Also, please provide **feedback from sidebar options** once done')
@@ -488,7 +488,7 @@ if agree:
                                                 state=False
                                                 
                                         elif unique[counts.argmax()] ==0:
-                                            st.write('<h4 style="color:#ce222f"> <b> RESULT: Nee travel Pannirundha Pooiturupa </b> <h4>', unsafe_allow_html=True)
+                                            st.write('<h4 style="color:#ce222f"> <b> RESULT: Sorry to Say, you would have not survived based on the input data </b> <h4>', unsafe_allow_html=True)
                                             st.write('Please refer the below dataframe for each model outputs: **0 -> Not Survived, 1 -> Survived** ', unsafe_allow_html=True)
                                             st.dataframe(pd.DataFrame(output, index=['Voting_Classifier_Hard', 'Voting_Classifier_Soft', 'RandomForest'], columns=['Output']))
                                             st.write('**Thanks for using the app**. Please press **"Refresh" button** to continue with new prediction. Also, please provide **feedback from sidebar options** once done')
@@ -615,7 +615,7 @@ if agree:
                                                 state=False
                                                 
                                         elif unique[counts.argmax()] ==0:
-                                            st.write('<h4 style="color:#ce222f"> <b> RESULT: Nee travel Pannirundha Pooiturupa </b> <h4>', unsafe_allow_html=True)
+                                            st.write('<h4 style="color:#ce222f"> <b> RESULT: Sorry to Say, you would have not survived based on the input data </b> <h4>', unsafe_allow_html=True)
                                             st.write('Please refer the below dataframe for each model outputs: **0 -> Not Survived, 1 -> Survived** ', unsafe_allow_html=True)
                                             st.dataframe(pd.DataFrame(output, index=['Voting_Classifier_Hard', 'Voting_Classifier_Soft', 'RandomForest'], columns=['Output']))
                                             st.write('**Thanks for using the app**. Please press **"Refresh" button** to continue with new prediction. Also, please provide **feedback from sidebar options** once done')
@@ -867,7 +867,7 @@ The following are the data one has to provide : Pclass, Name, Sex, Age, Fare, Si
                                             if st.button('Refresh'):
                                                 state=False
                                         elif unique[counts.argmax()] ==0:
-                                            st.write('<h4> <b> RESULT: Nee travel Pannirundha Pooiturupa </b> <h4>', unsafe_allow_html=True)
+                                            st.write('<h4> <b> RESULT: Sorry to Say, you would have not survived based on the input data </b> <h4>', unsafe_allow_html=True)
                                             st.write('Please refer the below dataframe for each model outputs: **0 -> Not Survived, 1 -> Survived** ', unsafe_allow_html=True)
                                             st.dataframe(pd.DataFrame(output, index=['Voting_Classifier_Hard', 'Voting_Classifier_Soft', 'RandomForest'], columns=['Output']))
                                             st.write('**Thanks for using the app**. Please press **"Refresh" button** to continue with new prediction. Also, please provide **feedback from sidebar options** once done')
@@ -972,7 +972,7 @@ The following are the data one has to provide : Pclass, Name, Sex, Age, Fare, Si
                                                 state=False
                                                 
                                         elif unique[counts.argmax()] ==0:
-                                            st.write('<h4> <b> RESULT: Nee travel Pannirundha Pooiturupa </b> <h4>', unsafe_allow_html=True)
+                                            st.write('<h4> <b> RESULT: Sorry to Say, you would have not survived based on the input data </b> <h4>', unsafe_allow_html=True)
                                             st.write('Please refer the below dataframe for each model outputs: **0 -> Not Survived, 1 -> Survived** ', unsafe_allow_html=True)
                                             st.dataframe(pd.DataFrame(output, index=['Voting_Classifier_Hard', 'Voting_Classifier_Soft', 'RandomForest'], columns=['Output']))
                                             st.write('**Thanks for using the app**. Please press **"Refresh" button** to continue with new prediction. Also, please provide **feedback from sidebar options** once done')
@@ -1099,7 +1099,7 @@ The following are the data one has to provide : Pclass, Name, Sex, Age, Fare, Si
                                                 state=False
                                                 
                                         elif unique[counts.argmax()] ==0:
-                                            st.write('<h4> <b> RESULT: Nee travel Pannirundha Pooiturupa </b> <h4>', unsafe_allow_html=True)
+                                            st.write('<h4> <b> RESULT: Sorry to Say, you would have not survived based on the input data </b> <h4>', unsafe_allow_html=True)
                                             st.write('Please refer the below dataframe for each model outputs: **0 -> Not Survived, 1 -> Survived** ', unsafe_allow_html=True)
                                             st.dataframe(pd.DataFrame(output, index=['Voting_Classifier_Hard', 'Voting_Classifier_Soft', 'RandomForest'], columns=['Output']))
                                             st.write('**Thanks for using the app**. Please press **"Refresh" button** to continue with new prediction. Also, please provide **feedback from sidebar options** once done')
