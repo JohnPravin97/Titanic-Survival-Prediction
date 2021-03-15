@@ -355,7 +355,7 @@ if agree:
                         if (cols[0].button('Predict')): 
                             dataframe_save = pd.HDFStore('titanic_search_dataframe.h5')
                             try: 
-                                dic = {'Pclass': Pclass, 'Name': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
+                                dic = {'Pclass': Pclass, 'Pronoun': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
                                 X = pd.DataFrame(dic, index=[0])
                                 X.Age = X.Age.astype('int64')
                                 X.Fare = X.Fare.astype('int64')
@@ -458,7 +458,7 @@ if agree:
                         if (cols[0].button('Predict')): 
                             dataframe_save = pd.HDFStore('titanic_search_dataframe.h5')
                             try:
-                                dic = {'Pclass': Pclass, 'Name': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
+                                dic = {'Pclass': Pclass, 'Pronoun': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
                                 X = pd.DataFrame(dic, index=[0])
                                 X.Age = X.Age.astype('int64')
                                 X.Fare = X.Fare.astype('int64')
@@ -585,7 +585,7 @@ if agree:
                         if (cols[0].button('Predict')): 
                             dataframe_save = pd.HDFStore('titanic_search_dataframe.h5')
                             try: 
-                                dic = {'Pclass': Pclass, 'Name': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
+                                dic = {'Pclass': Pclass, 'Pronoun': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
                                 X = pd.DataFrame(dic, index=[0])
                                 X.Age = X.Age.astype('int64')
                                 X.Fare = X.Fare.astype('int64')
@@ -839,7 +839,7 @@ The following are the data one has to provide : Pclass, Name, Sex, Age, Fare, Si
                         if (cols[0].button('Predict')): 
                             dataframe_save = pd.HDFStore('titanic_search_dataframe.h5')
                             try: 
-                                dic = {'Pclass': Pclass, 'Name': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
+                                dic = {'Pclass': Pclass, 'Pronoun': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
                                 X = pd.DataFrame(dic, index=[0])
                                 X.Age = X.Age.astype('int64')
                                 X.Fare = X.Fare.astype('int64')
@@ -942,7 +942,7 @@ The following are the data one has to provide : Pclass, Name, Sex, Age, Fare, Si
                         if (cols[0].button('Predict')): 
                             dataframe_save = pd.HDFStore(r'titanic_search_dataframe.h5')
                             try:
-                                dic = {'Pclass': Pclass, 'Name': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
+                                dic = {'Pclass': Pclass, 'Pronoun': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
                                 X = pd.DataFrame(dic, index=[0])
                                 X.Age = X.Age.astype('int64')
                                 X.Fare = X.Fare.astype('int64')
@@ -1069,7 +1069,7 @@ The following are the data one has to provide : Pclass, Name, Sex, Age, Fare, Si
                         if (cols[0].button('Predict')): 
                             dataframe_save = pd.HDFStore(r'C:\Users\jpravijo\Desktop\Anaconda\Streamlit\Titanic Prediction\titanic_search_dataframe.h5')
                             try: 
-                                dic = {'Pclass': Pclass, 'Name': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
+                                dic = {'Pclass': Pclass, 'Pronoun': Name, 'Sex': Sex, 'Age': Age, 'SibSp': SibSp, 'Parch': Parch, 'Fare': Fare, 'Embarked': Embarked}
                                 X = pd.DataFrame(dic, index=[0])
                                 X.Age = X.Age.astype('int64')
                                 X.Fare = X.Fare.astype('int64')
